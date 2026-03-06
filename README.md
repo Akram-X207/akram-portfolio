@@ -4,6 +4,8 @@
 
 **Software Developer · B.Tech CSE · Full-Stack Enthusiast**
 
+[![Live Site](https://img.shields.io/badge/Live%20Site-CLICK--ME!-00000?style=flat-square&logo=vercel)](https://akram-portfolio-lake.vercel.app/)
+
 [![GitHub](https://img.shields.io/badge/GitHub-Akram--X207-181717?style=flat-square&logo=github)](https://github.com/Akram-X207)
 [![Twitter](https://img.shields.io/badge/Twitter-@Akram__X207-1DA1F2?style=flat-square&logo=x)](https://x.com/Akram_X207)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-akram--x207-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/akram-x207)
