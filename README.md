@@ -71,7 +71,7 @@ portfolio/
     │   │   └── ControllerHeader.tsx  # Above-sidebar header with social icon links
     │   ├── Loading/            # Splash/loading screen shown on first load
     │   ├── Main/
-    │   │   ├── MeetMe.tsx      # "About Me" section — bio and hire me blurb
+    │   │   ├── AboutMe.tsx      # "About Me" section — bio and hire me blurb
     │   │   ├── Skills.tsx      # Skills grid — technology tags
     │   │   ├── Experience.tsx  # Experience section (empty placeholder for now)
     │   │   ├── Projects.tsx    # Projects list — cards with live/GitHub links
@@ -97,7 +97,7 @@ portfolio/
 The portfolio is a **single-page application** with a sidebar-based navigation system.
 
 - **Sidebar (`Controller`)** — Shows profile pic, name, and nav buttons (ABOUT ME, SKILLS, MY WORK, PROJECTS, SOCIALS). Clicking a button smoothly scrolls the main panel to the corresponding section.
-- **Main panel** — All sections (`MeetMe`, `Skills`, `Experience`, `Projects`, `Socials`) are stacked vertically in a scrollable container. Only one section is in view at a time.
+- **Main panel** — All sections (`AboutMe`, `Skills`, `Experience`, `Projects`, `Socials`) are stacked vertically in a scrollable container. Only one section is in view at a time.
 - **URL Routing** — Active section is reflected in the URL hash (`#skills`, `#projects`, etc.) for shareability and deep linking.
 - **Project Detail** — Clicking a project card in the Projects section replaces the main panel with a `ProjectDetail` view, navigable via browser back/forward via hash (`#project-slug`).
 - **Sidebar Collapse** — A toggle button collapses/expands the sidebar, with state persisted in the URL as `?collapsed=true`.

@@ -2,10 +2,10 @@
 import React from "react";
 import Link from "next/link";
 
-const MeetMe = () => {
+const AboutMe = () => {
   return (
     <section
-      id="meet-me"
+      id="about-me"
       className="flex items-center justify-center h-full w-full overflow-auto"
     >
       <div className="w-full h-full mx-auto max-w-4xl p-2.5 md:p-0 flex items-center md:justify-center ">
@@ -15,8 +15,13 @@ const MeetMe = () => {
               ABOUT ME
             </h2>
             <p className="text-sm lg:text-base xl:text-md leading-relaxed max-w-3xl mx-auto ">
-              Hi! I&apos;m <span className="[font-weight:700]">Shaikh Akram</span>,
-              a <span className="[font-weight:700]">Software Developer</span> and B.Tech CSE student passionate about building modern, responsive, and user-focused web applications. I enjoy turning ideas into real products while continuously improving my skills in full-stack development.
+              Hi! I&apos;m{" "}
+              <span className="[font-weight:700]">Shaikh Akram</span>, a{" "}
+              <span className="[font-weight:700]">Software Developer</span> and
+              B.Tech CSE student passionate about building modern, responsive,
+              and user-focused web applications. I enjoy turning ideas into real
+              products while continuously improving my skills in full-stack
+              development.
             </p>
           </div>
 
@@ -44,4 +49,4 @@ const MeetMe = () => {
   );
 };
 
-export default MeetMe;
+export default AboutMe;

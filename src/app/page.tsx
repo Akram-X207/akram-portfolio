@@ -3,7 +3,7 @@ import Background from "@/components/Background";
 import Controller from "@/components/Controller";
 import ControllerHeader from "@/components/Controller/ControllerHeader";
 
-import MeetMe from "@/components/Main/MeetMe";
+import AboutMe from "@/components/Main/AboutMe";
 import Skills from "@/components/Main/Skills";
 import QuickMenu from "@/components/QuickMenu";
 import Projects from "@/components/Main/Projects";
@@ -22,10 +22,16 @@ import {
   PanelTopOpen,
 } from "lucide-react";
 
-const VALID_SECTIONS = new Set(["meet-me", "skills", "my-work", "projects", "socials"]);
+const VALID_SECTIONS = new Set([
+  "about-me",
+  "skills",
+  "my-work",
+  "projects",
+  "socials",
+]);
 
 const SECTION_ID_MAP: Record<string, string> = {
-  "meet-me": "meet-me",
+  "about-me": "about-me",
   skills: "skills",
   "my-work": "experience",
   projects: "projects",
@@ -36,8 +42,8 @@ export default function Page() {
   const [showLoading, setShowLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
   const [activeSection, setActiveSection] = useState<
-    "meet-me" | "skills" | "my-work" | "projects" | "socials"
-  >("meet-me");
+    "about-me" | "skills" | "my-work" | "projects" | "socials"
+  >("about-me");
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
   const { theme } = useTheme();
@@ -105,8 +111,8 @@ export default function Page() {
       !initial ||
       (!VALID_SECTIONS.has(initial) && !initial.startsWith("project-"))
     ) {
-      window.history.replaceState(null, "", "#meet-me");
-      setActiveSection("meet-me");
+      window.history.replaceState(null, "", "#about-me");
+      setActiveSection("about-me");
     } else if (VALID_SECTIONS.has(initial)) {
       setActiveSection(initial as typeof activeSection);
     } else if (initial.startsWith("project-")) {
@@ -276,9 +282,10 @@ export default function Page() {
               <button
                 onClick={handleCollapseToggle}
                 className={`absolute z-40 p-2 rounded-full border transition-all duration-300 ease-in-out
-                  ${theme === "dark"
-                    ? "bg-white/10 hover:bg-white/90 hover:text-black border-white/20 backdrop-blur-xl"
-                    : "bg-black/5 hover:bg-black/90 hover:text-white border-black/20 backdrop-blur-xl"
+                  ${
+                    theme === "dark"
+                      ? "bg-white/10 hover:bg-white/90 hover:text-black border-white/20 backdrop-blur-xl"
+                      : "bg-black/5 hover:bg-black/90 hover:text-white border-black/20 backdrop-blur-xl"
                   }
                   top-3 left-3
                   hidden md:block
@@ -295,9 +302,10 @@ export default function Page() {
               <button
                 onClick={handleCollapseToggle}
                 className={`absolute z-40 p-1.5 rounded-full border transition-all duration-300 ease-in-out flex items-center justify-center
-                  ${theme === "dark"
-                    ? "bg-white/10 hover:bg-white/90 hover:text-black border-white/20 backdrop-blur-xl"
-                    : "bg-black/5 hover:bg-black/90 hover:text-white border-black/20 backdrop-blur-xl"
+                  ${
+                    theme === "dark"
+                      ? "bg-white/10 hover:bg-white/90 hover:text-black border-white/20 backdrop-blur-xl"
+                      : "bg-black/5 hover:bg-black/90 hover:text-white border-black/20 backdrop-blur-xl"
                   }
                   top-2 left-2
                   md:hidden
@@ -336,7 +344,7 @@ export default function Page() {
                       />
                     ) : (
                       <>
-                        <MeetMe />
+                        <AboutMe />
                         <Skills />
                         <Experience />
                         <Projects />

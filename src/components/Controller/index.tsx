@@ -5,16 +5,17 @@ import Link from "next/link";
 import Image from "next/image";
 
 type Props = {
-  activeSection?: "meet-me" | "skills" | "my-work" | "projects" | "socials";
+  activeSection?: "about-me" | "skills" | "my-work" | "projects" | "socials";
   onSectionChange?: (
-    section: "meet-me" | "skills" | "my-work" | "projects" | "socials"
+    section: "about-me" | "skills" | "my-work" | "projects" | "socials",
   ) => void;
 };
 
-const Controller = ({ activeSection = "meet-me", onSectionChange }: Props) => {
+const Controller = ({ activeSection = "about-me", onSectionChange }: Props) => {
   const { theme } = useTheme();
   const [screenWidth, setScreenWidth] = useState(0);
-  const [effectiveActiveSection, setEffectiveActiveSection] = useState(activeSection);
+  const [effectiveActiveSection, setEffectiveActiveSection] =
+    useState(activeSection);
 
   useEffect(() => {
     const updateScreenWidth = () => {
@@ -50,7 +51,7 @@ const Controller = ({ activeSection = "meet-me", onSectionChange }: Props) => {
   const borderClass = theme === "dark" ? "border-white/80" : "border-black";
 
   const getActiveButtonClass = (
-    section: "meet-me" | "skills" | "my-work" | "projects" | "socials"
+    section: "about-me" | "skills" | "my-work" | "projects" | "socials",
   ) => {
     const isActive = effectiveActiveSection === section;
     if (theme === "dark") {
@@ -64,8 +65,11 @@ const Controller = ({ activeSection = "meet-me", onSectionChange }: Props) => {
     }
   };
 
-  const buttons: Array<{ label: string; section: "meet-me" | "skills" | "my-work" | "projects" | "socials" }> = [
-    { label: "ABOUT ME", section: "meet-me" },
+  const buttons: Array<{
+    label: string;
+    section: "about-me" | "skills" | "my-work" | "projects" | "socials";
+  }> = [
+    { label: "ABOUT ME", section: "about-me" },
     { label: "SKILLS", section: "skills" },
     { label: "MY WORK", section: "my-work" },
     { label: "PROJECTS", section: "projects" },
@@ -128,7 +132,6 @@ const Controller = ({ activeSection = "meet-me", onSectionChange }: Props) => {
             {label}
           </button>
         ))}
-
       </div>
     </div>
   );
